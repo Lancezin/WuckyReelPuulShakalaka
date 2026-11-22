@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160d20">
+  <meta name="description" content="Sorteie combinações malucas de verbo, artigo e substantivo para criar ideias de jogos.">
+  <title>Sorteador de Ideias — Gerador de jogos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#topo" aria-label="Sorteador de Ideias, início">
+        <span class="brand-icon" aria-hidden="true">✳</span>
+        <span>SORTEADOR<span class="brand-light">.LAB</span></span>
+      </a>
+      <span class="top-tag"><span class="live-dot"></span> GERADOR DE IDEIAS DE JOGOS</span>
+    </header>
+
+    <section class="hero" id="topo">
+      <div class="eyebrow"><span class="eyebrow-line"></span> SUA PRÓXIMA IDEIA PODE SER ABSURDA</div>
+      <h1>Três palavras.<br><span>Um jogo inteiro.</span></h1>
+      <p class="hero-copy">Misture verbos, artigos e substantivos até encontrar aquela ideia que não deveria funcionar — mas pode virar um jogo incrível.</p>
+    </section>
+
+    <section class="machine" aria-labelledby="machine-title">
+      <div class="machine-heading">
+        <div>
+          <span class="section-kicker">MÁQUINA DE IDEIAS Nº 001</span>
+          <h2 id="machine-title">O que vamos criar hoje?</h2>
+        </div>
+        <span class="machine-star" aria-hidden="true">✦</span>
+      </div>
+
+      <div class="reels" aria-label="Roletas de palavras">
+        <div class="reel-column">
+          <div class="reel-label">VERBO <span>01</span></div>
+          <div class="reel-window" id="verb-window">
+            <div class="reel-word" id="verb-word">???</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <div class="reel-label">ARTIGO <span>02</span></div>
+          <div class="reel-window" id="article-window">
+            <div class="reel-word" id="article-word">???</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <div class="reel-label">SUBSTANTIVO <span>03</span></div>
+          <div class="reel-window" id="noun-window">
+            <div class="reel-word" id="noun-word">???</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-panel" aria-live="polite" aria-atomic="true">
+        <span class="result-caption">SUA IDEIA DE JOGO</span>
+        <div class="result-phrase" id="result-phrase">Três palavras vão mudar tudo.</div>
+        <div class="result-actions">
+          <span class="result-hint" id="result-hint">Clique no botão e deixe a sorte decidir.</span>
+          <button class="copy-button" id="copy-button" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>
+            <span>Copiar ideia</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="machine-controls">
+        <label class="article-setting" for="article-mode">
+          <span>TIPO DE ARTIGO</span>
+          <select id="article-mode">
+            <option value="random">Surpresa</option>
+            <option value="indefinite">Indefinido (um / uma)</option>
+            <option value="definite">Definido (o / a)</option>
+          </select>
+        </label>
+        <button class="spin-button" id="spin-button" type="button">
+          <span class="button-spark" aria-hidden="true">✦</span>
+          <span id="spin-label">SORTEAR IDEIA</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <span class="word-count" id="word-count">+ de 250 combinações de palavras</span>
+      </div>
+      <div class="machine-bottom"><span>● SISTEMA PRONTO</span><span>GIRE A ROLETA. CRIE O IMPROVÁVEL.</span><span>V. 1.0</span></div>
+    </section>
+
+    <section class="below-grid">
+      <div class="info-card">
+        <span class="card-icon">✳</span>
+        <div><h3>Sem ideias repetidas?</h3><p>O sorteador combina palavras de um banco com centenas de possibilidades e tenta evitar repetir a última combinação.</p></div>
+      </div>
+      <div class="history-card">
+        <div class="history-heading"><div><span class="section-kicker">SEU HISTÓRICO</span><h3>Ideias sorteadas</h3></div><button id="clear-history" class="clear-button" type="button" disabled>Limpar</button></div>
+        <ol id="history-list" class="history-list"><li class="empty-history">Suas últimas ideias vão aparecer aqui.</li></ol>
+      </div>
+    </section>
+    <footer class="footer"><span>FEITO PARA QUEM TEM IDEIAS DEMAIS (OU DE MENOS).</span><span>✦ SORTEIE · IMAGINE · DESENVOLVA ✦</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
